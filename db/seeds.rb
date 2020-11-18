@@ -5,3 +5,10 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+require 'faker'
+categories = ["chinese", "italian", "japanese", "french", "belgian"]
+
+for i in (1..20)
+  Restaurant.new(name: Faker::Company.name, address: Faker::Address.full_address, category: categories.sample, phone_number: Faker::PhoneNumber.phone_number).save
+end
